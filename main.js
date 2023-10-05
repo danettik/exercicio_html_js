@@ -5,9 +5,15 @@ function validaNome(nomeCompleto) { // Corrected function name
     return nomeComoArray.length >= 2;
 }
 
-form.addEventListener('submit', function(e) {
-    let formEValido = false;
-    e.preventDefault();
+function 
+
+form.addEventListener('submit', function(e) { //"e" é de evento
+    e.preventDefault(); //Impede que o formulário seja carregado antes da hora
+
+        let validaForm = (primeiroPalpite.value, segundoPalpite.value);
+        if(validaForm){
+            alert("Palpite enviado. Boa sorte!")
+        }
 
     const seuNome = document.getElementById('seu-nome');
     const primeiroPalpite = document.getElementById('primeiro-palpite');
