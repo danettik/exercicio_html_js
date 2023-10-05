@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        body {
+          background-image: url(Fundo\ Site.png);
+          background-size: 2%; /* Isso ajusta a imagem para cobrir toda a área do corpo */
+          background-repeat: round; /* Isso impede que a imagem seja repetida */
+        }
+      </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML com JS</title>
+
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,700&family=Mooli&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Poney Company S.A.</h1>
+        <h2>Sorteiro para rifa</h2>   
+        <h3>Dê o seu palpite!</h3>  
+        <form id="form-rifa">
+            <label for="seu-nome">Seu nome:</label>
+            <input type="text" id="seu-nome" name="seu-nome" required placeholder="Seu nome" />
+            <label for="primeiro-palpite">Primeiro palpite:</label>
+            <input type="number" id="primeiro-palpite" name="primeiro-palpite" min="1" max="100" required placeholder="Escolha um número de 1 a 100" />
+            <label for="segundo-palpite">Segundo palpite:</label>
+            <input type="number" id="segundo-palpite" name="segundo-palpite" min="1" max="100" required placeholder="Escolha um número de 1 a 100" />
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
