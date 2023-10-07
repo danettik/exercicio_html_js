@@ -1,41 +1,30 @@
-const form = document.getElementById('form-rifa');
+const form = document.getElementById('form'); 
+const saldo = document.getElementById('saldo');
+const saque = document.getElementById('saque');
+const acerto = document.getElementById('saquerealizado');
+const erro = document.getElementById('erro');
 
-function validaNome(nomeCompleto) { // Corrected function name
-    const nomeComoArray = nomeCompleto.split(' ');
-    return nomeComoArray.length >= 2;
+function sacandoDinheiro(saldo, saque){
+    return saldo > saque;
 }
 
-function palpiteRifa(primeiroPalpite, segundoPalpite){
-    return primeiroPalpite < segundoPalpite;
-}
+form.addEventListener('submit', function(e){
+    e.preventDefault();
 
-form.addEventListener('submit', function(e) { //"e" é de evento
-    e.preventDefault(); //Impede que o formulário seja carregado antes da hora
+    let validarForm = sacandoDinheiro(saldo.valueAsNumber, saque.valueAsNumber)
+    if(validarForm){
+        acerto.style.display = 'block';
+        saldo.value=''
+        saque.value=''
+    } 
+}) 
 
-        let validarForm = (primeiroPalpite.valueAsNumber, segundoPalpite.valueAsNumber);
-        if(validarForm){
-            alert("Palpite enviado. Boa sorte!")
-        } else {
-            alert("O número do primeiro palpite não pode ser maior que o segundo")
-        }
-
-    const seuNome = document.getElementById('seu-nome'); // Recupera informação
-    const primeiroPalpite = document.getElementById('primeiro-palpite');
-    const segundoPalpite = document.getElementById('segundo-palpite');
-    const mensagemSucesso = 'Palpite enviado com sucesso!';
-    const erro = document.getElementById('erro');
-
-    formEValido = validaNome(seuNome.value); // Corrected function name
-    if (formEValido) {
-        alert(mensagemSucesso);
-
-        seuNome.value = "";
-        primeiroPalpite.value = "";
-        segundoPalpite.value = "";
-
-    } else {
-        alert("Por favor, insira o seu nome completo");
+saque.addEventListener('keyup', function(e){
+    let validarForm = sacandoDinheiro(saldo.valueAsNumber, saque.valueAsNumber)
+    if (!validarForm){
+        erro.style.display = 'block'; 
+        acerto.style.display = 'none';
+    } else{
+        erro.style.display = 'none';
     }
 })
-
-console.log(form);

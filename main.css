@@ -1,51 +1,56 @@
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+    margin: 0;
 }
 
-h1, h2, h3 {
-    font-family: 'Courier Prime', monospace;
-    margin: 10px;
-}
+body{
+    background-color: black;
+    color: white;
+} 
 
-h1 {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.container {
-    margin: 100px auto;
-    max-width: 640px;
-    width: 100%;
+.container, h1{
+    display: flex;
+    justify-content: center;
     text-align: center;
-    color: #00008b;
+    margin-bottom: 20px;
 }
 
-form {
-    margin-top: 20px;
-}
-
-input, textarea, button {
-    display: block;
-    padding: 8px;
-    margin-bottom: 8px;
+.container{
     width: 100%;
-    resize: none;
+    flex-direction: row;
+    align-items: center;
 }
 
-button {
-    background-color: #00008b;
-    border: none;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    cursor: pointer;
+.box{
+    height: 300px;
+    width: 300px;
 }
 
-button:hover {
-    background-color: #6495ED;
+input, button, span{
+    display: block;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: white;
+    color: black;
+    margin: 0 auto;
+}
+
+span{
+    display: none;
+}
+
+#saquerealizado{
+    border-radius: 2px;
+    background-color: green;
+}
+
+#erro{
+    border-radius: 2px;
+    background-color: red;
 }
